@@ -16,13 +16,36 @@
 
       <!--Asset Management-->
       <a-assets timeout="10000">        
-        
+      <a-assets-item id="terrain" src="./assets/models/terrain/scene.gltf">
+      <a-assets-item id="plane" src="./assets/models/airplane/scene.gltf"></a-assets-item>
+
+      </a-assets-item>
         
       </a-assets>
 
       <!-- Terrain  -->
-     
+      <a-entity 
+      id="terrain"
+      gltf-model="#terrain"
+      position="0 0 0"
+      scale="0.3 0.3 0.3"
+      animation="property:position;to:0 0 1000;easing:linear;loop:true;dur:150000"
+      terrain-rotation-reader
 
+      >
+
+      </a-entity>
+      <a-entity 
+      id="plane"
+      gltf-model="#plane"
+      position="0 0 15"
+      scale="1 1"
+      rotation="0 90 0"
+      plane-rotation-reader
+      >
+
+      </a-entity>
+      
       
     </a-scene>
   </body>
