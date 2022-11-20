@@ -9,15 +9,22 @@ AFRAME.registerComponent("flying-bird",{
             y:500,
             z:500
         })
-        birdEl.setAttribute("gltf","./assets/models/flying_bird/scene.gtlf")
+        birdEl.setAttribute("gltf-model","./assets/models/flying_bird/scene.gltf")
         birdEl.setAttribute("animation-mixer",{
             
+        })
+        birdEl.setAttribute("static-body",{
+            shape:"sphere",
+            sphereRadius:5
+        })
+        birdEl.setAttribute("game-play",{
+            elementId:`${id}`
         })
         terrainEl.appendChild(birdEl)
     },
 
     init:function(){
-        for(i=1;i<=20;i++){
+        for(var i=1;i<=20;i++){
             var id =  `bird${i}`
             var posX = Math.floor(Math.random() * 3000 + -1000)
             var posY = Math.floor(Math.random()*2 + -1);
